@@ -1,0 +1,72 @@
+######################
+# Site configuration #
+######################
+title: "Roadmapper"
+caption: "Tool"
+description: "A tool for generating a high-level roadmap from a CSV file"
+author: "John Peart"
+
+baseurl: "/roadmapper" # the subpath of your site, e.g. /blog
+url: "http://johnpe.art"
+
+
+######################
+# Site header        #
+######################
+header:
+  type: "default" # Set to "default", "service-name" or "service-name-with-navigation" to change the header
+  site-name: "Roadmapper" # Appears in the header, regardless of style
+  # service-name: "Roadmap" # Appears in the header, if site.header.type is set to "service-name" or "service-name-with-navigation"
+  # links:
+  # - name: "Page title"
+  #   url: "/"
+  #   alt: "Go to Page 1"
+  # - name: "Page title"
+  #   url: "/2/"
+  #   alt: "Go to Page 2"
+
+
+######################
+# Site phase         #
+######################
+phase: alpha
+
+
+######################
+# Site footer        #
+######################
+footer:
+  type: "default" # Set to "default"
+  ogl: false # Display (true) or disable (false) the OGL licence text
+  crown-copyright: false # Display (true) or disable (false) the Crown copyright text and symbol
+  # links:
+  # - name: "Item 1"
+  #   url: "/"
+  #   alt: "Go to Item 1"
+  # - name: "Item 2"
+  #   url: "/2/"
+  #   alt: "Go to Item 2"
+
+##################
+# Build settings #
+##################
+permalink: pretty
+markdown: kramdown
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+future: false
+highlighter: true
+sass:
+  sass_dir: _sass
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+# exclude:
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/

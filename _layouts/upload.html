@@ -1,0 +1,54 @@
+---
+layout: skeleton
+---
+
+<div id="fileParser" class="govuk-width-container">
+	{% if site.phase != 'live' %}
+	<div class="govuk-phase-banner">
+		<p class="govuk-phase-banner__content">
+			<strong class="govuk-tag govuk-phase-banner__content__tag">
+			{{ site.phase | capitalize}}
+			</strong>
+			<span class="govuk-phase-banner__text">
+			This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+			</span>
+		</p>
+	</div>
+	{% endif %}
+	<main class="govuk-main-wrapper " id="main-content" role="main">
+		<h1 class="govuk-heading-xl">
+			{% if site.caption %}<span class="govuk-caption-xl">{{ site.caption }}</span>{% endif %}
+			{{ site.title }}
+		</h1>
+		
+		<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+		
+		<div class="govuk-grid-row">
+			
+			<div class="govuk-grid-column-full">
+					
+					<div class="govuk-form-group">
+  						<label class="govuk-label govuk-label--l" for="importFile">
+    						Upload a file
+  						</label>
+  						<input class="govuk-file-upload" id="importFile" accept=".tsv" name="importFile" type="file">
+						
+					</div>
+		
+					<button type="button" class="govuk-button" data-module="govuk-button" id="btnsubmit" value="Submit" onclick="readCSVFile();">
+						Create roadmap
+					</button>
+					
+			</div>
+			
+		</div>
+	</main>
+</div>
+
+<div class="govuk-width-container--wide">
+	<div id="roadmap" class="govuk-grid-row govuk-!-margin-bottom-9">
+	
+	</div>
+</div>
+
+<script src="{{ '/javascript/roadmapper.js' | relative_url }}"></script>

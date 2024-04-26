@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" class="govuk-template ">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ site.title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+		<meta name="theme-color" content="#0b0c0c">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="shortcut icon" sizes="16x16 32x32 48x48" href="{{ site.url | append: site.baseurl | append: '/assets/images/favicon.ico' }}" type="image/x-icon">
+		<link rel="apple-touch-icon" sizes="180x180" href="{{ site.url | append: site.baseurl | append: '/assets/images/apple-touch-icon-180x180.png' }}">
+		<link rel="apple-touch-icon" sizes="167x167" href="{{ site.url | append: site.baseurl | append: '/assets/images/apple-touch-icon-167x167.png' }}">
+		<link rel="apple-touch-icon" sizes="152x152" href="{{ site.url | append: site.baseurl | append: '/assets/images/apple-touch-icon-152x152.png' }}">
+		<link rel="apple-touch-icon" href="{{ site.url | append: site.baseurl | append: '/assets/images/apple-touch-icon.png' }}">
+		<meta property="og:image" content="{{ site.url | append: site.baseurl | append: '/assets/images/opengraph-image.png' }}">
+		<link rel="stylesheet" href="{{ site.url | append: site.baseurl | append: '/stylesheets/govuk-frontend.css' }}">
+	</head>
+  <body class="govuk-template__body ">
+		<script>
+    		document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
+  		</script>
+		<a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+		{% include header/index.html %}
+		{{ content }}
+		{% include footer/index.html %}
+		<script type="module" src="{{ site.url | append: site.baseurl | append: '/javascript/govuk-frontend-5.3.1.min.js' }}"></script>
+		<script type="module">
+			import { initAll } from '{{ site.url | append: site.baseurl | append: "/javascript/govuk-frontend-5.3.1.min.js" }}'
+			initAll()
+		</script>
+  </body>
+</html>

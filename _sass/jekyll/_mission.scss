@@ -1,0 +1,53 @@
+details.govuk-mission {
+	border: 1px solid; 
+	border-color: govuk-colour("mid-grey");
+	@include govuk-responsive-margin(3, "bottom");
+}
+
+details.govuk-mission summary.govuk-mission--summary { 
+	display: block;
+	@include govuk-responsive-padding(2);
+	
+	cursor: pointer;
+  
+
+	/* Hide the marker completely. */
+	list-style-image: none;
+	&::marker,
+	&::-webkit-details-marker {
+		display: none;
+		list-style-image: none;
+		content: '';
+		width: 0;
+		height: 0;
+	}
+	&:after {
+		display: block;
+		position: relative;
+		content: 'Show more';
+		@include govuk-font(16, bold);
+		@include govuk-responsive-margin(1, top);
+		color: govuk-colour("blue");
+	}
+	&:hover:after {
+		@include govuk-link-decoration;
+    	@include govuk-link-style-text;
+	}
+}
+
+details.govuk-mission[open] summary.govuk-mission--summary:after {
+	content: 'Show less';
+}
+
+details.govuk-mission summary.govuk-mission--summary .govuk-mission--summary-title {
+	margin: 0;
+}
+
+details.govuk-mission summary.govuk-mission--summary > * {
+	display: inline;
+}
+
+.govuk-mission--content {
+	@include govuk-responsive-padding(2, "left");
+	@include govuk-responsive-padding(2, "right");
+}
