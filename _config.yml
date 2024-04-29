@@ -7,7 +7,7 @@ description: "A tool for generating a high-level roadmap from a CSV file"
 author: "John Peart"
 
 baseurl: "/roadmapper" # the subpath of your site, e.g. /blog
-url: "http://johnpe.art"
+url: "https://johnpe.art"
 
 
 ######################
