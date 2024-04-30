@@ -120,61 +120,51 @@ function parseFiles(files) {
                     var future = document.getElementById('future--' + missionID);
                     if (rowColData[col].toLowerCase() == 'now') {
                         now.innerHTML += `
-                            <details class="govuk-mission">
-                                <summary class="govuk-mission--summary">
-                                    <h3 class="govuk-heading-m govuk-mission--summary-title">
-						                ` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
-					                </h3>
-                                </summary>
-			                    <div class="govuk-mission--content">
-			                        <p class="govuk-body">
-				                        ` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
-			                        </p>
-				                    <h4 class="govuk-heading-s">Teams</h4>
-				                    <p id="teams-`+ rowID +`" class="govuk-body">
-                                    </p>
-				                    <h4 class="govuk-heading-s">Themes</h4>
-				                    <p id="themes-`+ rowID +`" class="govuk-body">
-                                    </p>
-			                    </div>
-		                    </details>
+				<details class="govuk-mission">
+					<summary class="govuk-mission--summary">
+						<h3 class="govuk-heading-m govuk-mission--summary-title">
+							` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
+						</h3>
+					</summary>
+					<div class="govuk-mission--content">
+						<p class="govuk-body">
+							` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
+						</p>
+						<p id="teams-`+ rowID +`" class="govuk-body"></p>
+					</div>
+				</details>
                         `
                     } else if (rowColData[col].toLowerCase() == 'next') {
                         next.innerHTML += `
-                            <details class="govuk-mission">
-                                <summary class="govuk-mission--summary">
-                                    <h3 class="govuk-heading-m govuk-mission--summary-title">
-						                ` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
-					                </h3>
-                                </summary>
-			                    <div class="govuk-mission--content">
-			                        <p class="govuk-body">
-				                        ` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
-			                        </p>
-				                    <h4 class="govuk-heading-s">Teams</h4>
-				                    <p id="teams-`+ rowID +`" class="govuk-body">
-                                    </p>
-				                    <h4 class="govuk-heading-s">Themes</h4>
-				                    <p id="themes-`+ rowID +`" class="govuk-body">
-                                    </p>
-			                    </div>
-		                    </details>
+				<details class="govuk-mission">
+					<summary class="govuk-mission--summary">
+						<h3 class="govuk-heading-m govuk-mission--summary-title">
+							` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
+						</h3>
+					</summary>
+					<div class="govuk-mission--content">
+						<p class="govuk-body">
+							` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
+						</p>
+						<p id="teams-`+ rowID +`" class="govuk-body"></p>
+					</div>
+				</details>
                         `
                     } else if (rowColData[col].toLowerCase() == 'future') {
                         future.innerHTML += `
-                            <details class="govuk-mission">
-                                <summary class="govuk-mission--summary">
-                                    <h3 class="govuk-heading-m govuk-mission--summary-title">
-						                ` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
-					                </h3>
-                                </summary>
-			                    <div class="govuk-mission--content">
-			                        <p class="govuk-body">
-				                	` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
-			                        </p>
-				                    <p id="teams-`+ rowID +`" class="govuk-body"></p>
-			                    </div>
-		                    </details>
+				<details class="govuk-mission">
+					<summary class="govuk-mission--summary">
+						<h3 class="govuk-heading-m govuk-mission--summary-title">
+							` + rowColData[3].replace(/^"(.+(?="$))"$/, '$1') + `
+						</h3>
+					</summary>
+					<div class="govuk-mission--content">
+						<p class="govuk-body">
+							` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
+						</p>
+						<p id="teams-`+ rowID +`" class="govuk-body"></p>
+					</div>
+				</details>
                         `
                     }
 		} else if (col == 5) {
