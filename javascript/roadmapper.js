@@ -55,64 +55,62 @@ function parseFiles(files) {
 				
                 // Get the teams data
                 var teams = rowColData[5].replace(/^"(.+(?="$))"$/, '$1').split(',');
-                // Get the themes data
-                var themes = rowColData[6].replace(/^"(.+(?="$))"$/, '$1').split(',');
                 
-				if (col == 0) {
-					// Column 0 is the "mission"
-                    // Store the value of the cell
-                    var goal = rowColData[col];
-                    var missionID = encodeURIComponent(rowColData[col].replace(/[\W_]+/g,"-").toLowerCase());
-					// Check if the mission this time is the same as last time
-					if (goal != mission && !missions.includes(missionID)) {
-                        // For the first column, if this is the first instance of that goal, create a heading
-                        
-						roadmap.innerHTML += `
-							<div id="`+ missionID +`" class="govuk-grid-column-full govuk-!-margin-top-9">
-								<h1 class="govuk-heading-xl">` 
-							+  goal.replace(/^"(.+(?="$))"$/, '$1') + 
-								`</h1>
-							</div>`;
-                        
-                        roadmap.innerHTML += `
-                            <div class="govuk-grid-column-one-third">
-	                            <h2 class="govuk-heading-l">
-		                            Now
-	                            </h2>
-                                <div id="now--` + missionID +  `">
-                                    
-                                </div>
-                            </div>
-                        `
-                        
-                        roadmap.innerHTML += `
-                            <div class="govuk-grid-column-one-third">
-	                            <h2 class="govuk-heading-l">
-		                            Next
-	                            </h2>
-                                <div id="next--` + missionID +  `">
-                                    
-                                </div>
-                            </div>
-                        `
-                        
-                        roadmap.innerHTML += `
-                            <div class="govuk-grid-column-one-third">
-	                            <h2 class="govuk-heading-l">
-		                            Future
-	                            </h2>
-                                <div id="future--` + missionID +  `">
-                                    
-                                </div>
-                            </div>
-                        `
-						// Save this string so we can compare it later
-                        var mission = rowColData[col];
-                        missions.push(missionID);
-					} else {
-                        // If we already have the relevant heading, skip
-						console.log('Repeated heading (' + mission + ') – skipping');
-					}
+		if (col == 0) {
+			// Column 0 is the "mission"
+			// Store the value of the cell
+			var goal = rowColData[col];
+			var missionID = encodeURIComponent(rowColData[col].replace(/[\W_]+/g,"-").toLowerCase());
+			// Check if the mission this time is the same as last time
+			if (goal != mission && !missions.includes(missionID)) {
+			// For the first column, if this is the first instance of that goal, create a heading
+	
+				roadmap.innerHTML += `
+					<div id="`+ missionID +`" class="govuk-grid-column-full govuk-!-margin-top-9">
+						<h1 class="govuk-heading-xl">` 
+					+  goal.replace(/^"(.+(?="$))"$/, '$1') + 
+						`</h1>
+					</div>`;
+	
+				roadmap.innerHTML += `
+				    <div class="govuk-grid-column-one-third">
+					    <h2 class="govuk-heading-l">
+						    Now
+					    </h2>
+					<div id="now--` + missionID +  `">
+					    
+					</div>
+				    </div>
+				`
+				
+				roadmap.innerHTML += `
+				    <div class="govuk-grid-column-one-third">
+					    <h2 class="govuk-heading-l">
+						    Next
+					    </h2>
+					<div id="next--` + missionID +  `">
+					    
+					</div>
+				    </div>
+				`
+				
+				roadmap.innerHTML += `
+				    <div class="govuk-grid-column-one-third">
+					    <h2 class="govuk-heading-l">
+						    Future
+					    </h2>
+					<div id="future--` + missionID +  `">
+					    
+					</div>
+				    </div>
+				`
+							// Save this string so we can compare it later
+				var mission = rowColData[col];
+				missions.push(missionID);
+			} else {
+				// If we already have the relevant heading, skip
+				console.log('Repeated heading (' + mission + ') – skipping');
+			}
                 } else if (col == 1) {
                     // Column 1 is the "Period" – now, next, future
                     var now = document.getElementById('now--' + missionID);
