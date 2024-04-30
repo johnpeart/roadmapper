@@ -170,27 +170,17 @@ function parseFiles(files) {
                                 </summary>
 			                    <div class="govuk-mission--content">
 			                        <p class="govuk-body">
-				                        ` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
+				                	` + rowColData[4].replace(/^"(.+(?="$))"$/, '$1') + `
 			                        </p>
-				                    <h4 class="govuk-heading-s">Teams</h4>
-				                    <p id="teams-`+ rowID +`" class="govuk-body">
-                                    </p>
-				                    <h4 class="govuk-heading-s">Themes</h4>
-				                    <p id="themes-`+ rowID +`" class="govuk-body">
-                                    </p>
+				                    <p id="teams-`+ rowID +`" class="govuk-body"></p>
 			                    </div>
 		                    </details>
                         `
                     }
-				} else if (col == 5) {
+		} else if (col == 5) {
                     var team = document.getElementById('teams-' + rowID);
                     for (var i = 0; i < teams.length; i++) {
                         team.innerHTML += '<strong class="govuk-tag govuk-tag--blue">' + teams[i] + '</strong> ';
-                    }
-                } else if (col == 6) {
-                    var theme = document.getElementById('themes-' + rowID);
-                    for (var i = 0; i < themes.length; i++) {
-                        theme.innerHTML += '<strong class="govuk-tag govuk-tag--yellow">' + themes[i] + '</strong> ';
                     }
                 } else {
 				    // Do nothing
